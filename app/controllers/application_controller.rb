@@ -10,15 +10,15 @@ class App < Sinatra::Base
     post '/teams' do
       @team_name = params[team[name]]
       @team_motto = params[team[motto]]
-      @h1n = params["member1_name"]
-      @h1p = params["member1_power"]
-      @h1b = params["member1_bio"]
-      @h2n = params["member2_name"]
-      @h2p = params["member2_power"]
-      @h2b = params["member2_bio"]
-      @h3n = params["member3_name"]
-      @h3p = params["member3_power"]
-      @h3b = params["member3_bio"]
+      @h1n = params["team"]["members"][0]["name"]
+      @h1p = params["team"]["members"][0]["power"]
+      @h1b = params["team"]["members"][0]["bio"]
+      @h2n = params["team"]["members"][1]["name"]
+      @h2p = params["team"]["members"][1]["power"]
+      @h2b = params["team"]["members"][1]["bio"]
+      @h3n = params["team"]["members"][2]["name"]
+      @h3p = params["team"]["members"][2]["power"]
+      @h3b = params["team"]["members"][2]["bio"]
       erb :team
     end
 end
