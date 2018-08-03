@@ -19,7 +19,6 @@ class App < Sinatra::Base
       @h3n = params["member3_name"]
       @h3p = params["member3_power"]
       @h3b = params["member3_bio"]
-
       erb :team
     end
 end
