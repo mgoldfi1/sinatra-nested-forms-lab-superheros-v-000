@@ -8,8 +8,8 @@ class App < Sinatra::Base
       erb :index
     end
     post '/teams' do
-      @team_name = params[team[name]]
-      @team_motto = params[team[motto]]
+      @team_name = params["team"]["name"]
+      @team_motto = params["team"]["motto"]
       @h1n = params["team"]["members"][0]["name"]
       @h1p = params["team"]["members"][0]["power"]
       @h1b = params["team"]["members"][0]["bio"]
